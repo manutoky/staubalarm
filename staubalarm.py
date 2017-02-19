@@ -16,7 +16,7 @@ ifttt_key   = "******"
 # Get data from sensor
 requestString = "http://" + sensor_ip + "/data.json"
 r = requests.get(requestString)
-sensorData = json.loads(r.content)
+sensorData = json.loads(r.content.decode("utf-8"))
 if debug: 
     print("Reply")
     print(sensorData)
